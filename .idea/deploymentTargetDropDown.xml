@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="deploymentTargetDropDown">
+    <value>
+      <entry key="ExampleInstrumentedTest">
+        <State />
+      </entry>
+      <entry key="app">
+        <State />
+      </entry>
+      <entry key="app.asenkronway">
+        <State />
+      </entry>
+      <entry key="app.coroutineway">
+        <State />
+      </entry>
+      <entry key="app.senkronway">
+        <State />
+      </entry>
+      <entry key="coroutineTest()">
+        <State />
+      </entry>
+      <entry key="myFirstTest()">
+        <State />
+      </entry>
+      <entry key="useAppContext()">
+        <State />
+      </entry>
+    </value>
+  </component>
+</project>

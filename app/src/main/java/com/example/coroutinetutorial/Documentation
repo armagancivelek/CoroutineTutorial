@@ -1,0 +1,116 @@
+####COROUTINE####
+
+Runnable with super powers
+Takes a block of code to run in a thread
+Asynchronicity expressed as sequential code that is easy to read and reson about
+exception handling and cancellable
+
+
+Who can cancel this execution  ? , Does it follow a particular lifecycle?, Who gets exceptions if it fails
+Structured concurrency is trying to solve above questions -> it is a pattern which is trying to solve memory leaks
+
+What is function ?
+
+a sequence of instructions that takes input and returns outputs.
+
+fun square(x:int)  = x*x
+
+fun main() {
+
+x = square(5)
+
+print(x)
+
+}
+
+### Structured Concurency ###
+
+Structure your concurency  using imperative  program flow
+Async child operations are quarenteed to  finish before their parents
+Errors in child  jobs  propagate  to parent job making sure  other running child jobs are cancelled.
+
+When the code execution arrives square line, main execution is paused and jump to the square function inside
+
+
+###Coroutine Scope ###
+
+Keep track of coroutines
+Ability to cancel ongoing work
+Notified when a failure happens
+
+cancelling a scope can not start any other coroutines
+
+###Job###
+Provides lifecycle
+coroutine hierarchy
+states ->new , active , completing , completed, cancelling, cancelled
+
+supervisior job anca root child oldugu zamsn işe yarar
+
+###Coroutine Context###
+
+parent context is combination of defaults + inherited context + arguments
+Coroutine context = parent context + job()
+
+eger parent job cancelletion exception alırsa bu diger exceptionlardan farklı oldugu için diğer
+cocuklar iptal olmaz.
+
+CoroutineDispatcher -> Threading -->As default : Dispatchers.Default
+job ->Lifecycle -->As default : No parent job
+CoroutineExceptionHandler-->As default : None
+CoroutineName-->As default : "coroutine"
+
+
+Thread vs Coroutine
+With threads, the operating system switches running threads preemptively according to its scheduler, which is an algorithm
+in the operating system kernel. With coroutines, the programmer and programming language determine when to switch coroutines;
+in other words, tasks are cooperatively multitasked by pausing and resuming functions at set points, typically (but not necessarily) within a single thread.###
+
+
+###Concurency###
+
+Multiple tasks within in a program which seems to be executed at the same time.
+
+What problems are coroutines trying to solve
+
+
+###Coroutine context###
+The coroutine context is a set of rules and configurations that define how the coroutine will be executed. Under the hood, it’s a kind of map, with a set of possible keys and values.
+
+###Coroutine###
+A Coroutine scope keeps track of any Coroutine you crate using launch or async
+
+Coroutines make our asynchronous code look sequential. Coroutines help us escape the callback hell.
+Coroutines save us from the complex reactive chains.
+
+Coroutines are computer program components that generalize subroutines for non-preemptive multitasking,
+by allowing execution to be suspended and resumed.
+
+
+With Kotlin coroutines, you can write asynchronous code, which was traditionally written using the Callback pattern,
+using synchronous style. The return value of a function will provide the result of the asynchronous call.
+
+a variant of functions that enables concurency via cooperative multitasking.
+
+###What is GlobalScope###
+.In top-level code, when launching a concurrent operation from a non-suspending context, an appropriately
+confined instance of CoroutineScope shall be used instead of a GlobalScope
+
+.A global CoroutineScope not bound to any job. Global scope is used to launch top-level coroutines which are
+operating on the whole application lifetime and are not cancelled prematurely.
+
+.Coroutines can run within a thread
+.Coroutines are suspendable
+.They can switch their context easily
+
+**.Coroutines are not confined to a single thread
+
+
+TRY AND CATCH  COROUTİNE İÇİNDE EXCEPTION LARI HANDLE ETMEK ICIN KULLANILMAZ
+
+ASYNC HEMEN ERROR FIRLATMAZ TAKI AWAIT CAGRANA KADAR
+LAUNCH HEMEN FIRLATIR
+
+CANCEL BİR EXCEPTİONDIR AMA UNCALLED EXCEPTİON DEGİLDİR BUNDAN SEBEB COROUTİNE EXCEPTİON HANDLER TARAFIDNAN YAKALANMAYACAK.
+
+Callbacks ->The kotlin compiler writes them under the hood when the computation can suspend

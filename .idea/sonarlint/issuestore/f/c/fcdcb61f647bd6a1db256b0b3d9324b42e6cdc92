@@ -1,0 +1,12 @@
+
+Bkotlin:S125/"Remove this commented out code.(şÙ«Öıÿÿÿÿ8Ãí¼•ø1
+Bkotlin:S1251"Remove this commented out code.(ĞÿÊšúÿÿÿÿ8†³Â•ø1
+xkotlin:S6306^"TUsing "GlobalScope" here leads to the breaking of structured concurrency principles.(š£Œúÿÿÿÿ8Ñí¼•ø1
+>kotlin:S1128"Remove this unused import.(í¼øşÿÿÿÿ8Ûí¼•ø1
+>kotlin:S1128"Remove this unused import.(Ôê³¨ÿÿÿÿÿ8Ûí¼•ø1
+9kotlin:S1128	"Remove this unused import.(Ÿô¯8Ûí¼•ø1
+9kotlin:S1128
+"Remove this unused import.(÷­¡ç8Ûí¼•ø1
+>kotlin:S1128"Remove this unused import.(èãÊõûÿÿÿÿ8Ûí¼•ø1
+8kotlin:S1128"Remove this unused import.(ú•Êy8˜³Â•ø1
+>kotlin:S1128"Remove this unused import.(¾ìÌıÿÿÿÿ8Ûí¼•ø1
